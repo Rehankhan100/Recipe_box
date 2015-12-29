@@ -1,0 +1,12 @@
+- @recipe.each_slice(4) do |recipes|
+  .row
+    - recipes.each do |recipe|
+      .col-md-3
+        .recipe
+          .image_wrapper
+            = link_to recipe do
+              - if recipe.image.present?
+                = image_tag recipe.image.url(), class: "recipe_image img_thumbnail"
+          %h2= link_to recipe.title , recipe
+          %br
+          %hr
